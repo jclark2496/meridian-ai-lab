@@ -1,0 +1,170 @@
+# Meridian Outfitters AI lab — every publish is 127.0.0.1 only.
+# Fake/canary data only. No DVAP dashboard. Don't expose past localhost.
+name: meridian-lab
+
+networks:
+  lab:
+    name: meridian-lab
+    external: true
+
+services:
+  chat:
+    image: meridian-chat:local
+    container_name: meridian-chat
+    networks: [lab]
+    ports: ["127.0.0.1:8781:8080"]
+    environment:
+      HOST: 0.0.0.0
+      PORT: "8080"
+      OLLAMA_URL: http://host.docker.internal:11434
+      OLLAMA_MODEL: llama3.2:3b
+      FAKEAPI_URL: http://meridian-fakeapi:8080
+    extra_hosts: ["host.docker.internal:host-gateway"]
+    mem_limit: 256m
+    cpus: 0.50
+    restart: unless-stopped
+
+  mcp:
+    image: meridian-dvmcp:local
+    container_name: meridian-mcp
+    networks: [lab]
+    ports: ["127.0.0.1:8782:9001"]
+    mem_limit: 768m
+    cpus: 0.75
+    restart: unless-stopped
+
+  rag:
+    image: qdrant/qdrant:v1.13.2
+    container_name: meridian-rag
+    networks: [lab]
+    ports: ["127.0.0.1:8783:6333"]
+    volumes: ["./data/qdrant:/qdrant/storage"]
+    environment:
+      QDRANT__SERVICE__HTTP_PORT: "6333"
+    mem_limit: 512m
+    cpus: 0.50
+    restart: unless-stopped
+
+  langflow:
+    image: langflowai/langflow:1.2.0
+    container_name: meridian-langflow
+    networks: [lab]
+    ports: ["127.0.0.1:8784:7860"]
+    environment:
+      LANGFLOW_AUTO_LOGIN: "true"
+      LANGFLOW_SUPERUSER: meridian
+      LANGFLOW_SUPERUSER_PASSWORD: canary-meridian-langflow-demo
+    mem_limit: 2g
+    cpus: 1.0
+    restart: unless-stopped
+
+  flowise:
+    image: flowiseai/flowise:3.0.5
+    container_name: meridian-flowise
+    networks: [lab]
+    ports: ["127.0.0.1:8785:3000"]
+    environment:
+      PORT: "3000"
+    mem_limit: 1536m
+    cpus: 1.0
+    restart: unless-stopped
+
+  n8n:
+    image: n8nio/n8n:1.120.0
+    container_name: meridian-n8n
+    networks: [lab]
+    ports: ["127.0.0.1:8786:5678"]
+    environment:
+      N8N_HOST: 127.0.0.1
+      N8N_PORT: "5678"
+      N8N_PROTOCOL: http
+      N8N_SECURE_COOKIE: "false"
+      WEBHOOK_URL: http://127.0.0.1:8786/
+      GENERIC_TIMEZONE: America/Chicago
+    mem_limit: 1g
+    cpus: 0.75
+    restart: unless-stopped
+
+  fakeapi:
+    image: meridian-fakeapi:local
+    container_name: meridian-fakeapi
+    networks: [lab]
+    ports: ["127.0.0.1:8788:8080"]
+    mem_limit: 128m
+    cpus: 0.25
+    restart: unless-stopped
+
+  # --- Phase 3 ---
+  ollama-shim:
+    build: ./ollama-shim
+    image: meridian-ollama-shim:local
+    container_name: meridian-ollama-shim
+    networks: [lab]
+    ports: ["127.0.0.1:8790:11434"]
+    environment:
+      OLLAMA_URL: http://host.docker.internal:11434
+      OLLAMA_MODEL: llama3.2:3b
+    extra_hosts: ["host.docker.internal:host-gateway"]
+    mem_limit: 256m
+    cpus: 0.50
+    restart: unless-stopped
+
+  litellm:
+    image: ghcr.io/berriai/litellm:main-stable
+    container_name: meridian-litellm
+    networks: [lab]
+    ports: ["127.0.0.1:8791:4000"]
+    volumes: ["./litellm/config.yaml:/app/config.yaml:ro"]
+    environment:
+      LITELLM_MASTER_KEY: sk-1234
+      # Lab intentionally uses the Wiz-honeypot default key sk-1234
+      LITELLM_DANGEROUSLY_PERMIT_WEAK_OR_UNSET_MASTER_KEY: "true"
+      OPENAI_API_KEY: canary-meridian-openai-sk-proj-demoONLY
+      ANTHROPIC_API_KEY: canary-meridian-anthropic-sk-ant-demoONLY
+    command: ["--config", "/app/config.yaml", "--host", "0.0.0.0", "--port", "4000"]
+    mem_limit: 768m
+    cpus: 0.75
+    depends_on: [ollama-shim]
+    restart: unless-stopped
+
+  mcp-rich:
+    build: ./mcp-rich
+    image: meridian-mcp-rich:local
+    container_name: meridian-mcp-rich
+    networks: [lab]
+    ports: ["127.0.0.1:8792:8090"]
+    mem_limit: 256m
+    cpus: 0.50
+    restart: unless-stopped
+
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:v0.5.20
+    container_name: meridian-open-webui
+    networks: [lab]
+    ports: ["127.0.0.1:8793:8080"]
+    volumes: ["./data/open-webui:/app/backend/data"]
+    environment:
+      OLLAMA_BASE_URL: http://meridian-ollama-shim:11434
+      WEBUI_AUTH: "false"
+      ENABLE_SIGNUP: "true"
+      DEFAULT_USER_ROLE: user
+      WEBUI_NAME: Meridian Camp Concierge
+      CORS_ALLOW_ORIGIN: "*"
+    mem_limit: 1536m
+    cpus: 1.0
+    depends_on: [ollama-shim]
+    restart: unless-stopped
+
+  chroma:
+    image: chromadb/chroma:0.6.3
+    container_name: meridian-chroma
+    networks: [lab]
+    ports: ["127.0.0.1:8794:8000"]
+    volumes: ["./data/chroma:/chroma/chroma"]
+    environment:
+      ANONYMIZED_TELEMETRY: "False"
+      IS_PERSISTENT: "TRUE"
+      # no auth token — open read for lab
+    mem_limit: 512m
+    cpus: 0.50
+    restart: unless-stopped

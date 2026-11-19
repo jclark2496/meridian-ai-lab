@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Our Story — Meridian Outfitters</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/site.css" />
+
+</head>
+<body>
+  <div class="announce">Issue 14 · The Spring Camp Edit is live · Free shipping over $100</div>
+  <header class="site">
+    <div class="wrap">
+      <div class="hdr">
+        <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><span></span></button>
+        <nav class="main">
+          <a href="shop.html">Shop</a>
+          <a href="shop.html?cat=apparel">Men</a>
+          <a href="shop.html?cat=apparel">Women</a>
+          <a href="shop.html?cat=camp">Camp</a>
+          <a href="shop.html?cat=climb">Climb</a>
+          <a href="shop.html?cat=sale">Sale</a>
+        </nav>
+        <a class="logo" href="index.html">Meridian <em>Outfitters</em></a>
+        <div class="hdr-actions">
+          <button type="button" aria-label="Search">
+            <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+            <span class="search-label">Search</span>
+          </button>
+          <a href="cart.html">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M6 7h12l-1 12H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+            Cart <span class="cart-count" data-cart-count hidden>0</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Our Story</div>
+      <div class="sec-label">Company</div>
+      <h1>Built in a garage.<br/>Still repaired by hand.</h1>
+      <p>Meridian Outfitters has been making and mending outdoor goods since 1998 — first for friends, then for anyone who measures a year in miles.</p>
+    </div>
+  </div>
+  <div class="wrap about-lead">
+    <div>
+      <h2>We sell fewer things, made better, meant to go farther.</h2>
+      <p>The first Meridian pieces were cut on a folding table behind a Fort Worth bait shop. Canvas that could take a Texas hailstorm. Leather that softened instead of cracking. Hardware we could replace in the field.</p>
+      <p>That standard never changed. Every product still passes three seasons of staff use before it ships. If we wouldn’t take it ourselves, it doesn’t make the line.</p>
+      <p>Today we run twelve flagship stores and a repair bench that has saved more jackets than we can count. The garage is gone. The promise is not.</p>
+    </div>
+    <img src="assets/hammock.jpg" alt="Hammock overlooking an alpine lake" />
+  </div>
+  <div class="wrap timeline">
+    <div class="sec-head"><div><div class="sec-label">Timeline</div><h2>Milestones</h2></div></div>
+    <div class="tl-item"><div class="tl-year">1998</div><div><h3>Founded</h3><p>Two partners, one rented garage, and a single waxed-canvas duffel that refused to quit.</p></div></div>
+    <div class="tl-item"><div class="tl-year">2006</div><div><h3>First flagship</h3><p>Opened on West 7th in Fort Worth with a full-time repair bench on the sales floor.</p></div></div>
+    <div class="tl-item"><div class="tl-year">2015</div><div><h3>Lifetime repair promise</h3><p>Extended free repairs on Meridian-made goods for the life of the product.</p></div></div>
+    <div class="tl-item"><div class="tl-year">2024</div><div><h3>Twelve stores</h3><p>Expanded to Austin, Denver, Portland, and eight more trail towns in between.</p></div></div>
+  </div>
+
+  <section class="news">
+    <div class="wrap news-inner">
+      <div>
+        <h2>The Field Notes letter</h2>
+        <p>Seasonal edits, packing lists, and dispatches from the road — every other Thursday.</p>
+      </div>
+      <form class="news-form" onsubmit="event.preventDefault(); window.MeridianCart && MeridianCart.toast('Thanks — you\'re on the list.');">
+        <input type="email" placeholder="Email address" aria-label="Email" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+  <footer class="site">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="logo" href="index.html">Meridian <em>Outfitters</em></a>
+          <p>Outdoor goods for people who measure a good year in miles and campfires.</p>
+        </div>
+        <div class="foot-col">
+          <h4>Shop</h4>
+          <a href="shop.html">New Arrivals</a>
+          <a href="shop.html?cat=apparel">Men</a>
+          <a href="shop.html?cat=apparel">Women</a>
+          <a href="shop.html?cat=camp">Camp</a>
+          <a href="shop.html?cat=sale">Sale</a>
+        </div>
+        <div class="foot-col">
+          <h4>Help</h4>
+          <a href="contact.html">Shipping</a>
+          <a href="contact.html">Returns</a>
+          <a href="about.html">Repairs</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="foot-col">
+          <h4>Company</h4>
+          <a href="about.html">Our Story</a>
+          <a href="contact.html">Stores</a>
+          <a href="journal.html">Journal</a>
+          <a href="contact.html">Careers</a>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 Meridian Outfitters</span>
+        <span>Privacy · Terms · Accessibility</span>
+      </div>
+    </div>
+  </footer>
+<script src="js/config.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/chat.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>

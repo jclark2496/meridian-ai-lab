@@ -1,0 +1,7 @@
+lab/data/open-webui/
+lab/dvmcp-src/
+**/node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+*.log

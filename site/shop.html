@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Shop — Meridian Outfitters</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/site.css" />
+
+</head>
+<body>
+  <div class="announce">Issue 14 · The Spring Camp Edit is live · Free shipping over $100</div>
+  <header class="site">
+    <div class="wrap">
+      <div class="hdr">
+        <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><span></span></button>
+        <nav class="main">
+          <a href="shop.html" class="active">Shop</a>
+          <a href="shop.html?cat=apparel">Men</a>
+          <a href="shop.html?cat=apparel">Women</a>
+          <a href="shop.html?cat=camp">Camp</a>
+          <a href="shop.html?cat=climb">Climb</a>
+          <a href="shop.html?cat=sale">Sale</a>
+        </nav>
+        <a class="logo" href="index.html">Meridian <em>Outfitters</em></a>
+        <div class="hdr-actions">
+          <button type="button" aria-label="Search">
+            <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+            <span class="search-label">Search</span>
+          </button>
+          <a href="cart.html">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M6 7h12l-1 12H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+            Cart <span class="cart-count" data-cart-count hidden>0</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Shop</div>
+      <div class="sec-label">Catalog</div>
+      <h1>Shop Meridian</h1>
+      <p>Field-tested kits for camp, climb, and the long road between trailheads.</p>
+    </div>
+  </div>
+  <div class="wrap shop-layout">
+    <aside class="filters" aria-label="Filters">
+      <h3>Category</h3>
+      <ul class="filter-list">
+        <li><label><input type="checkbox" name="cat" value="camp" /> Camp</label></li>
+        <li><label><input type="checkbox" name="cat" value="outerwear" /> Outerwear</label></li>
+        <li><label><input type="checkbox" name="cat" value="packs" /> Packs</label></li>
+        <li><label><input type="checkbox" name="cat" value="climb" /> Climb</label></li>
+        <li><label><input type="checkbox" name="cat" value="apparel" /> Apparel</label></li>
+        <li><label><input type="checkbox" name="cat" value="footwear" /> Footwear</label></li>
+      </ul>
+      <h3>Availability</h3>
+      <ul class="filter-list">
+        <li><label><input type="checkbox" name="sale" value="sale" /> On sale</label></li>
+        <li><label><input type="checkbox" name="sale" value="full" /> Full price</label></li>
+      </ul>
+    </aside>
+    <div>
+      <div class="shop-toolbar">
+        <div class="count" data-shop-count>12 products</div>
+        <label>Sort
+          <select data-shop-sort>
+            <option value="featured">Featured</option>
+            <option value="name">Name</option>
+            <option value="price-asc">Price: Low to high</option>
+            <option value="price-desc">Price: High to low</option>
+          </select>
+        </label>
+      </div>
+      <div class="shop-grid" data-shop-grid>
+        <article class="prod" data-product-card data-cat="camp" data-price="329" data-name="Meridian 2P Tent" data-sale="full">
+  <a href="products/meridian-2p.html">
+    <div class="prod-img"><span class="badge">Best seller</span><img src="assets/tent-glow.jpg" alt="Meridian 2P Tent" /></div>
+    <div class="prod-body">
+      <div class="cat-tag">Camp</div>
+      <h3>Meridian 2P Tent</h3>
+      <div class="price">$329</div>
+    </div>
+  </a>
+</article><article class="prod" data-product-card data-cat="outerwear" data-price="268" data-name="Range Shell" data-sale="full">
+  <a href="products/range-shell.html">
+    <div class="prod-img"><span class="badge">New</span><img src="assets/olive-jacket.jpg" alt="Range Shell" /></div>
+    <div class="prod-body">
+      <div class="cat-tag">Outerwear</div>
+      <h3>Range Shell</h3>
+      <div class="price">$268</div>
+    </div>
+  </a>
+</article><article class="prod" data-product-card data-cat="packs" data-price="178" data-name="Field Pack 32" data-sale="full">
+  <a href="products/field-pack-32.html">
+    <div class="prod-img"><img src="assets/green-pack.jpg" alt="Field Pack 32" /></div>
+    <div class="prod-body">
+      <div class="cat-tag">Packs</div>
+      <h3>Field Pack 32</h3>
+      <div class="price">$178</div>
+    </div>
+  </a>
+</article><article class="prod" data-product-card data-cat="packs" data-price="128" data-name="Daylight Daypack" data-sale="full">
+  <a href="products/daylight-daypack.html">
+    <div class="prod-img"><img src="assets/backpack.jpg" alt="Daylight Daypack" /></div>
+    <div class="prod-body">
+      <div class="cat-tag">Packs</div>
+      <h3>Daylight Daypack</h3>
+      <div class="price">$128</div>
+    </div>
+  </a>
+</article><article class="prod" data-product-card data-cat="camp" data-price="36" data-name="Tin Cup Flask" data-sale="sale">
+  <a href="products/tin-cup-flask.html">
+    <div class="prod-img"><span class="badge">Sale</span><img src="assets/bottle.jpg" alt="Tin Cup Flask" /></div>
+    <div class="prod-body">
+      <div class="cat-tag">Camp</div>
+      <h3>Tin Cup Flask</h3>
+      <div class="price"><s>$48</s>$36</div>
+    </div>
+  </a>
+</article><article class="prod" data-product-card data-cat="apparel" data-price="168" data-name="Trail Denim Jacket" data-sale="full">
+  <a href="products/trail-denim.html">
+    <div class="prod-img"><img src="assets/denim.jpg" alt="Trail Denim Jacket" /></div>
+    <div class="prod-body">
+      <div class="cat-tag">Apparel</div>
+      <h3>Trail Denim Jacket</h3>
+      <div class="price">$168</div>
+    </div>
+  </a>
+</article><article class="prod" data-product-card data-cat="climb" data-price="214" data-name="Ridge 9.8 Rope" data-sale="full">
+  <a href="products/ridge-rope.html">
+    <div class="prod-img"><img src="assets/climb-rope.jpg" alt="Ridge 9.8 Rope" /></div>
+    <div class="prod-body">
+      <div class="cat-tag">Climb</div>
+      <h3>Ridge 9.8 Rope</h3>
+      <div class="price">$214</div>
+    </div>
+  </a>
+</article><article class="prod" data-product-card data-cat="footwear" data-price="98" data-name="Approach Low" data-sale="sale">
+  <a href="products/approach-low.html">
+    <div class="prod-img"><span class="badge">Sale</span><img src="assets/sneaker.jpg" alt="Approach Low" /></div>
+    <div class="prod-body">
+      <div class="cat-tag">Footwear</div>
+      <h3>Approach Low</h3>
+      <div class="price"><s>$140</s>$98</div>
+    </div>
+  </a>
+</article><article class="prod" data-product-card data-cat="outerwear" data-price="248" data-name="Waxed Canvas Bomber" data-sale="full">
+  <a href="products/canvas-bomber.html">
+    <div class="prod-img"><img src="assets/bomber.jpg" alt="Waxed Canvas Bomber" /></div>
+    <div class="prod-body">
+      <div class="cat-tag">Outerwear</div>
+      <h3>Waxed Canvas Bomber</h3>
+      <div class="price">$248</div>
+    </div>
+  </a>
+</article><article class="prod" data-product-card data-cat="apparel" data-price="148" data-name="Thermal Fleece" data-sale="full">
+  <a href="products/thermal-fleece.html">
+    <div class="prod-img"><img src="assets/man-jacket.jpg" alt="Thermal Fleece" /></div>
+    <div class="prod-body">
+      <div class="cat-tag">Apparel</div>
+      <h3>Thermal Fleece</h3>
+      <div class="price">$148</div>
+    </div>
+  </a>
+</article><article class="prod" data-product-card data-cat="packs" data-price="210" data-name="Summit 40" data-sale="full">
+  <a href="products/summit-40.html">
+    <div class="prod-img"><img src="assets/hiker-pack.jpg" alt="Summit 40" /></div>
+    <div class="prod-body">
+      <div class="cat-tag">Packs</div>
+      <h3>Summit 40</h3>
+      <div class="price">$210</div>
+    </div>
+  </a>
+</article><article class="prod" data-product-card data-cat="camp" data-price="189" data-name="Weekend Camp Kit" data-sale="full">
+  <a href="products/camp-chair-kit.html">
+    <div class="prod-img"><span class="badge">Editor's pick</span><img src="assets/friends-fire.jpg" alt="Weekend Camp Kit" /></div>
+    <div class="prod-body">
+      <div class="cat-tag">Camp</div>
+      <h3>Weekend Camp Kit</h3>
+      <div class="price">$189</div>
+    </div>
+  </a>
+</article>
+      </div>
+    </div>
+  </div>
+  <script>
+  // Pre-check category from ?cat=
+  document.addEventListener("DOMContentLoaded", () => {
+    const cat = new URLSearchParams(location.search).get("cat");
+    if (!cat) return;
+    const box = document.querySelector('.filters input[name="cat"][value="'+cat+'"]');
+    if (box) { box.checked = true; box.dispatchEvent(new Event("change", {bubbles:true})); }
+  });
+  </script>
+
+  <section class="news">
+    <div class="wrap news-inner">
+      <div>
+        <h2>The Field Notes letter</h2>
+        <p>Seasonal edits, packing lists, and dispatches from the road — every other Thursday.</p>
+      </div>
+      <form class="news-form" onsubmit="event.preventDefault(); window.MeridianCart && MeridianCart.toast('Thanks — you\'re on the list.');">
+        <input type="email" placeholder="Email address" aria-label="Email" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+  <footer class="site">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="logo" href="index.html">Meridian <em>Outfitters</em></a>
+          <p>Outdoor goods for people who measure a good year in miles and campfires.</p>
+        </div>
+        <div class="foot-col">
+          <h4>Shop</h4>
+          <a href="shop.html">New Arrivals</a>
+          <a href="shop.html?cat=apparel">Men</a>
+          <a href="shop.html?cat=apparel">Women</a>
+          <a href="shop.html?cat=camp">Camp</a>
+          <a href="shop.html?cat=sale">Sale</a>
+        </div>
+        <div class="foot-col">
+          <h4>Help</h4>
+          <a href="contact.html">Shipping</a>
+          <a href="contact.html">Returns</a>
+          <a href="about.html">Repairs</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="foot-col">
+          <h4>Company</h4>
+          <a href="about.html">Our Story</a>
+          <a href="contact.html">Stores</a>
+          <a href="journal.html">Journal</a>
+          <a href="contact.html">Careers</a>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 Meridian Outfitters</span>
+        <span>Privacy · Terms · Accessibility</span>
+      </div>
+    </div>
+  </footer>
+<script src="js/config.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/chat.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>

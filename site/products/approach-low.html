@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Approach Low — Meridian Outfitters</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../css/site.css" />
+
+</head>
+<body>
+  <div class="announce">Issue 14 · The Spring Camp Edit is live · Free shipping over $100</div>
+  <header class="site">
+    <div class="wrap">
+      <div class="hdr">
+        <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><span></span></button>
+        <nav class="main">
+          <a href="../shop.html" class="active">Shop</a>
+          <a href="../shop.html?cat=apparel">Men</a>
+          <a href="../shop.html?cat=apparel">Women</a>
+          <a href="../shop.html?cat=camp">Camp</a>
+          <a href="../shop.html?cat=climb">Climb</a>
+          <a href="../shop.html?cat=sale">Sale</a>
+        </nav>
+        <a class="logo" href="../index.html">Meridian <em>Outfitters</em></a>
+        <div class="hdr-actions">
+          <button type="button" aria-label="Search">
+            <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+            <span class="search-label">Search</span>
+          </button>
+          <a href="../cart.html">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M6 7h12l-1 12H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+            Cart <span class="cart-count" data-cart-count hidden>0</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="breadcrumb" style="padding-top:28px;">
+      <a href="../index.html">Home</a><span>/</span>
+      <a href="../shop.html">Shop</a><span>/</span>
+      <a href="../shop.html?cat=footwear">Footwear</a><span>/</span>
+      Approach Low
+    </div>
+    <div class="pdp" data-product>
+      <div class="pdp-gallery" data-gallery>
+        <div class="pdp-main"><img data-gallery-main src="../assets/sneaker.jpg" alt="Approach Low" /></div>
+        <div class="pdp-thumbs"><button type="button" class="active" data-gallery-thumb data-src="../assets/sneaker.jpg"><img src="../assets/sneaker.jpg" alt="" /></button><button type="button" class="" data-gallery-thumb data-src="../assets/knit-shoe.jpg"><img src="../assets/knit-shoe.jpg" alt="" /></button><button type="button" class="" data-gallery-thumb data-src="../assets/hikers.jpg"><img src="../assets/hikers.jpg" alt="" /></button></div>
+      </div>
+      <div class="pdp-info">
+        <div class="sec-label">Footwear</div>
+        <h1>Approach Low</h1>
+        <div class="pdp-price"><s>$140</s> $98</div>
+        <div class="pdp-rating"><strong>4.4</strong> · 92 reviews</div>
+        <p class="pdp-desc">Sticky rubber approach shoes that transition cleanly from trailhead to first pitch. Field notes and packing tips ship with every order.</p>
+        <span class="option-label">Size</span>
+        <div class="size-row"><button type="button" class="active">8</button><button type="button" class="">9</button><button type="button" class="">10</button><button type="button" class="">11</button><button type="button" class="">12</button></div>
+        <span class="option-label">Quantity</span>
+        <div class="qty-row">
+          <div class="qty-ctrl">
+            <button type="button" data-delta="-1">−</button>
+            <input value="1" aria-label="Quantity" />
+            <button type="button" data-delta="1">+</button>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary btn-block"
+          data-add-to-cart
+          data-id="approach-low"
+          data-name="Approach Low"
+          data-price="98"
+          data-image="assets/sneaker.jpg">Add to cart</button>
+        <div class="pdp-meta">
+          <div>Free shipping over $100</div>
+          <div>28-day returns · Lifetime repair promise</div>
+          <div>Ships from Fort Worth, TX</div>
+        </div>
+      </div>
+    </div>
+    <section class="reviews">
+      <div class="sec-head">
+        <div>
+          <div class="sec-label">Reviews</div>
+          <h2>From the field</h2>
+        </div>
+      </div>
+      <div class="review">
+      <div class="review-head"><strong>Elena M.</strong><span class="stars">★★★★★</span></div>
+      <p>Took this on a three-day trip in the Cascades. Held up in overnight rain without a drip.</p>
+    </div><div class="review">
+      <div class="review-head"><strong>Jordan P.</strong><span class="stars">★★★★☆</span></div>
+      <p>Solid build. Wish the stuff sack packed a touch smaller, but the livability is excellent.</p>
+    </div><div class="review">
+      <div class="review-head"><strong>Sam R.</strong><span class="stars">★★★★★</span></div>
+      <p>Exactly what the concierge recommended. Pairing with the Range Shell for spring.</p>
+    </div>
+    </section>
+  </div>
+
+  <section class="news">
+    <div class="wrap news-inner">
+      <div>
+        <h2>The Field Notes letter</h2>
+        <p>Seasonal edits, packing lists, and dispatches from the road — every other Thursday.</p>
+      </div>
+      <form class="news-form" onsubmit="event.preventDefault(); window.MeridianCart && MeridianCart.toast('Thanks — you\'re on the list.');">
+        <input type="email" placeholder="Email address" aria-label="Email" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+  <footer class="site">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="logo" href="../index.html">Meridian <em>Outfitters</em></a>
+          <p>Outdoor goods for people who measure a good year in miles and campfires.</p>
+        </div>
+        <div class="foot-col">
+          <h4>Shop</h4>
+          <a href="../shop.html">New Arrivals</a>
+          <a href="../shop.html?cat=apparel">Men</a>
+          <a href="../shop.html?cat=apparel">Women</a>
+          <a href="../shop.html?cat=camp">Camp</a>
+          <a href="../shop.html?cat=sale">Sale</a>
+        </div>
+        <div class="foot-col">
+          <h4>Help</h4>
+          <a href="../contact.html">Shipping</a>
+          <a href="../contact.html">Returns</a>
+          <a href="../about.html">Repairs</a>
+          <a href="../contact.html">Contact</a>
+        </div>
+        <div class="foot-col">
+          <h4>Company</h4>
+          <a href="../about.html">Our Story</a>
+          <a href="../contact.html">Stores</a>
+          <a href="../journal.html">Journal</a>
+          <a href="../contact.html">Careers</a>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 Meridian Outfitters</span>
+        <span>Privacy · Terms · Accessibility</span>
+      </div>
+    </div>
+  </footer>
+<script src="../js/config.js"></script>
+<script src="../js/cart.js"></script>
+<script src="../js/chat.js"></script>
+<script src="../js/site.js"></script>
+</body>
+</html>
