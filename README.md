@@ -5,7 +5,25 @@
 >
 > **All keys, tokens and customer records here are fake canaries** (for example `canary-meridian-*`, `sk-1234`, `AKIAIOSFODNN7EXAMPLE`). None of them work anywhere.
 
-A fake outdoor-gear retailer ("Meridian Outfitters") with a professional front end and a set of exposed AI components behind it. It is the test target for the outside-in AI exposure scanner ([ai-exposure-scanner](https://github.com/jclark2496/ai-exposure-scanner)). See `meridian-lab-diagram.pdf` for the layout.
+Meridian Outfitters is a fictional outdoor retailer built to answer a practical question: which parts of an AI application does a security scanner actually recognize? The customer-facing experience is a gear shop with a shopping assistant. The underlying lab provides known services and synthetic data to compare against a scanner’s report.
+
+![Camp Concierge answering a tent question on the Meridian Outfitters storefront](https://forkthis.ai/assets/shots/meridian.jpg)
+
+[View the architecture diagram](meridian-lab-diagram.pdf) · [Preview the storefront](#quick-start)
+
+## What it can do
+
+- **Show the shopper’s experience.** Browse the gear catalog and product pages, add an item to the cart, or ask Camp Concierge about equipment. The chat widget includes canned gear advice when its backend is unavailable.
+- **Show the architecture behind the chat.** The lab brings together a storefront proxy, chat and model services, MCP tool interfaces, and seeded vector stores. The diagram shows where these components fit.
+- **Check detection coverage.** The synthetic records and known services give a reviewer an expected result to compare with the separate scanner’s report. The scanner lives in its own repository.
+
+## Quick start
+
+To see the shopper’s side, open the local copy of [`site/index.html`](site/index.html) in a browser. Select **Shop the Camp Edit**, then **Meridian 2P Tent**. The product page shows the tent, its price, and an Add to cart button. The storefront can be explored on its own. The full local lab has additional prerequisites below.
+
+## One design decision
+
+Meridian uses recognizable synthetic records in its data stores. When one appears in a report, the reviewer can trace it back to a known fixture. That makes it possible to compare coverage across scanner versions using the same baseline.
 
 ## Requirements
 - Docker Desktop (about 6 GB of images on first pull)
@@ -53,3 +71,5 @@ cd lab && docker compose down
 - `lab/data/qdrant` and `lab/data/chroma` are small pre-seeded vector stores. `lab/data/open-webui` is not committed; it rebuilds on start.
 - `site/` is the Meridian front end.
 - The stock Langflow, Flowise, n8n, Qdrant, LiteLLM, Open WebUI and Chroma images are pulled from their registries.
+
+[MIT License](LICENSE) · [Forkthis build notes](https://forkthis.ai/meridian/)
