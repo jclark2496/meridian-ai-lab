@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meridian AI Exposure Lab · README cover source</title>
+<style>
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+.cover { --ink: #152b54; --muted: #415579; color: var(--ink); position: relative; isolation: isolate; overflow: hidden; width: 100%; max-width: 1200px; aspect-ratio: 1200/508; container-type: inline-size; background: var(--paper); }
+.cover h1, .cover p { margin: 0; }
+.top, .foot { position: absolute; left: 4.5%; z-index: 4; }
+.top { top: 9%; display: flex; align-items: center; gap: .85cqw; }
+.mark { display: block; width: 1.55cqw; height: 2.4cqw; }
+.word { font-size: 1.9cqw; font-weight: 700; letter-spacing: -.09cqw; }
+.copy { position: absolute; z-index: 3; left: 4.5%; top: 32%; width: 47%; }
+h1 { font-size: 8.8cqw; font-weight: 600; letter-spacing: -.67cqw; line-height: .88; }
+.sub { font-size: 2.05cqw; line-height: 1.18; font-weight: 450; letter-spacing: -.062cqw; max-width: 31cqw; margin-top: 2.15cqw !important; }
+.foot, .note { font: 500 1.07cqw/1.3 ui-monospace, Menlo, Consolas, monospace; letter-spacing: -.025cqw; }
+.foot { bottom: 8%; color: var(--muted); display: flex; align-items: center; gap: .75cqw; }
+.rule { height: 1px; width: 2.6cqw; background: currentColor; }
+.note { position: absolute; color: var(--muted); right: 4.5%; top: 11.4%; z-index: 1; }
+@media (max-width: 650px) {
+  .cover { aspect-ratio: 600/550; }
+  .top { top: 6%; gap: 1.5cqw; }
+  .word { font-size: 3.55cqw; }
+  .mark { width: 2.7cqw; height: 4.2cqw; }
+  .top,.copy,.foot { left: 6%; }
+  .copy { top: 18%; width: 88%; }
+  h1 { font-size: 11.6cqw; letter-spacing: -.75cqw; }
+  .sub { font-size: 3.9cqw; max-width: 74cqw; margin-top: 2.4cqw !important; }
+  .note { right: 6%; top: 7.4%; font-size: 2.25cqw; }
+  .foot { bottom: 4.5%; font-size: 2.4cqw; gap: 1.5cqw; }
+  .rule { width: 5cqw; }
+}
+
+.cover { --paper: #131b24; --ink: #f8f3e8; --muted: #bec4c9; }
+.cover::after { content:""; z-index:-1; position:absolute; inset:0 0 0 47%; background-image:radial-gradient(#73808b42 1px, transparent 1px); background-size:1.1cqw 1.1cqw; }
+.copy {top:28%;width:48%}
+h1 {font-size:7.2cqw;letter-spacing:-.5cqw}
+h1 span {display:block;font-size:.44em;letter-spacing:-.12cqw;line-height:1.45;font-weight:400}
+.sub {font-size:1.83cqw;line-height:1.31;max-width:34cqw;color:#d5d7d5;margin-top:1.6cqw!important}
+.mark {color:#ffb991}
+.index {position:absolute;z-index:2;right:4.5%;width:43.5%;top:23%; padding-left:2.5cqw;}
+.index::before {content:"";position:absolute;left:.65cqw;top:9%;bottom:9%;border-left:1px solid #ffa47e;}
+.item {position:relative;display:grid;grid-template-columns:10cqw 1fr;gap:.5cqw;align-items:center;border-top:1px solid #53606a;padding:1.4cqw 0;background:#131b24d6;}
+.item:last-child {border-bottom:1px solid #53606a;}
+.item::before {content:"";position:absolute;left:-1.85cqw;width:1.4cqw;top:50%;border-top:1px solid #ffa47e;}
+.item b {font-size:1.68cqw;letter-spacing:-.06cqw;font-weight:500;}
+.item small {font:1.08cqw/1.4 ui-monospace,Menlo,Consolas,monospace;color:#ffd2b9;}
+@media(max-width:650px){
+  .copy {top:16%;width:89%}
+  h1 {font-size:11.2cqw;}
+  h1 span {display:inline;font-size:.48em;letter-spacing:-.15cqw;}
+  .sub {max-width:88%;font-size:3.55cqw;margin-top:2cqw!important;}
+  .index {top:43%;right:7%;width:86%;padding-left:4cqw;}
+  .item {grid-template-columns:23cqw 1fr;padding:2.1cqw 0;gap:1cqw;}
+  .item b {font-size:3.3cqw;}
+  .item small {font-size:2.12cqw;}
+  .item::before {left:-3.35cqw;width:2.5cqw;}
+  .foot {display:none;}
+}
+</style>
+<!-- Edit this source, then export the .cover element at 1200px and 600px viewport widths. -->
+<main class="cover">
+  <div class="top"><svg class="mark" aria-hidden="true" viewBox="0 0 18 29" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round"><path d="M3 2v7c0 4 6 4 6 8v10M7 2v7c0 3 2 4 2 7M11 2v7c0 3-2 4-2 7m6-14v7c0 4-6 4-6 8"/><circle cx="9" cy="24" r="1" fill="currentColor"/></svg><span class="word">forkthis</span></div>
+  <div class="note">Local lab · synthetic data</div>
+  <div class="copy"><h1>Meridian <span>AI Exposure Lab</span></h1><p class="sub">A deliberately vulnerable AI environment for testing detection coverage.</p></div>
+  <p class="foot"><span class="rule"></span>Security engineering</p>
+  <div class="index"><div class="item"><b>Interfaces</b><small>Camp Concierge · Open WebUI</small></div><div class="item"><b>Models</b><small>Ollama-style API · LiteLLM</small></div><div class="item"><b>Agent tools</b><small>DVMCP · custom MCP service</small></div><div class="item"><b>Retrieval</b><small>Qdrant · ChromaDB</small></div><div class="item"><b>Builders</b><small>Langflow · Flowise · n8n</small></div><div class="item"><b>Fixtures</b><small>Synthetic records · mock API</small></div></div>
+</main>
+</html>
